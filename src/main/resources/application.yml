@@ -9,14 +9,6 @@ eureka:
       prefer-ip-address: true #使用ip地址注册
       lease-renewal-interval-in-seconds: 5 #想注册中心发送心跳的续约间隔时间5s
       lease-expiration-duration-in-seconds: 10 #eureka client发送心跳给server端后，续约到期时间（默认90秒）
-  service-product:
-    ribbon:
-      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule  #权重策略
-      ConnectTimeout: 250 # Ribbon的连接超时时间
-      ReadTimeout: 1000 # Ribbon的数据读取超时时间
-      OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
-      MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
-      MaxAutoRetries: 1 # 对当前实例的重试次数
 server:
   port: 13101
 
